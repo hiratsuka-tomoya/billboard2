@@ -1,0 +1,1 @@
+UPDATE users SET login_id = 'cccccc', password = 'jA4k9zv1_nk9xF5fkLWpaCwMs0X1JN3vd6soWbk1LVI', name = 'cccccc', branch_id = 1, department_id = 1, is_stopped = false WHERE id = 0

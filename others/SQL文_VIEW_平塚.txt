@@ -1,0 +1,31 @@
+//ユーザー_投稿
+CREATE VIEW users_postings AS
+(
+SELECT 
+	postings.id,
+	postings.title,
+	postings.text,
+	postings.category,
+	postings.user_id,
+	users.name as user_name,
+	postings.created_at,
+	postings.updated_at
+FROM postings
+JOIN users
+ON postings.user_id = users.id
+);
+
+CREATE VIEW users_comments AS
+(
+SELECT 
+	comments.id,
+	comments.text,
+	comments.user_id,
+	comments.posting_id,
+	users.name as user_name,
+	comments.created_at,
+	comments.updated_at
+FROM comments
+JOIN users
+ON comments.user_id = users.id
+);

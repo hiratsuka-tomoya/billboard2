@@ -1,0 +1,64 @@
+//ユーザー
+INSERT INTO users (
+	login_id,
+	password,
+	name,
+	branch_id,
+	department_id,
+	is_stopped
+) VALUES (
+	'aaaaaa',
+	'aaaaaa',
+	'総務A',
+	1,
+	1,
+	0
+);
+
+//支店
+INSERT INTO branchs (
+	name
+) VALUES 
+('本社'),
+('支店A'),
+('支店B'),
+('支店C'),
+('支店D'),
+('支店E'),
+('支店F'),
+('支店G')
+;
+
+//部署
+INSERT INTO departments (
+	name
+) VALUES
+ ('総務'),
+('情セキュ'),
+('支店長'),
+('社員')
+;
+
+//投稿
+INSERT INTO postings (
+	title,
+	text,
+	category,
+	user_id
+) VALUES (
+	'テストタイトル2',
+	'テスト本文2',
+	'テストカテゴリ2',
+	1
+);
+
+//コメント
+INSERT INTO comments (
+	text,
+	user_id,
+	posting_id
+) VALUES (
+	'テストコメント3',
+	1,
+	2
+);
