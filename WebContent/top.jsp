@@ -28,8 +28,6 @@ margin: 0;
 .wrapper {
   min-height: 100%;
 
-  /* フッタの高さと等しいネガティブマージン */
-  /* また最後の子要素の潜在的なマージンとしても機能 */
   margin-bottom: -50px;
 }
 .footer,
@@ -60,28 +58,6 @@ function myConfirm(target) {
     $( "#datepicker2" ).datepicker();
   });
 </script>
-<style>
-.rowTitle > div {
-	min-height: 2em;
-	border: 1px solid gray;
-	background: #cef3f5;
-}
-.rowMenu > div {
-	min-height: 3em;
-	border: 1px solid gray;
-	background: #f5cece
-}
-.rowRefine > div {
-	min-height: 5em;
-	border: 1px solid gray;
-	background: #f9cece
-}
-.rowPosting > div {
-	min-height: 10em;
-	border: 1px solid gray;
-	background: #f1cece
-}
-</style>
 </head>
 <body>
 <div class="wrapper">
@@ -131,7 +107,7 @@ function myConfirm(target) {
 				<div class="form-group">
 					<label for="category">カテゴリー</label>
 					<div class="category">
-						<select name="refineCategory">
+						<select name="refineCategory" class="form-control">
 							<c:forEach items="${categories}" var="category">
 								<c:if test="${ category == refineCategory }">
 									<option value="${category}" selected><c:out value="${category}" /></option>
@@ -144,10 +120,15 @@ function myConfirm(target) {
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="category">投稿日</label>
-					<div class="date">
-						<input type="text" id="datepicker1" name="refineStartDate" value="${ refineStartDate }" size="8"> ～
-						<input type="text" id="datepicker2" name="refineEndDate" value="${ refineEndDate }"  size="8">
+					<div class="row">
+						<div class="col-sm-6">
+						<label for="category">from</label>
+						<input type="text" id="datepicker1" name="refineStartDate" class="form-control" value="${ refineStartDate }" size="8">
+						</div>
+						<div class="col-sm-6">
+						<label for="category">to</label>
+						<input type="text" id="datepicker2" name="refineEndDate" class="form-control" value="${ refineEndDate }"  size="8">
+						</div>
 					</div>
 				</div>
 				<input type="submit" value="絞込み">
@@ -210,7 +191,6 @@ function myConfirm(target) {
 	</div>
 </div>
 <div class="push"></div>
-</div>
 <footer class="footer"><div class="copyright"><p class="text-center">Copyright(c)Tomoya Hiratsuka</p></div></footer>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>

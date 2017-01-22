@@ -81,7 +81,7 @@ public class NewPostServlet extends HttpServlet {
 		}
 
 		if (StringUtils.isEmpty(category)) {
-			messages.add("カテゴリーを入力してください");
+			messages.add("カテゴリーを選択もしくは入力してください");
 		} else if (category.length() > 10) {
 			messages.add("カテゴリーは10文字以下で入力してください");
 		}

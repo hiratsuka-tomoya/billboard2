@@ -28,8 +28,6 @@ margin: 0;
 .wrapper {
   min-height: 100%;
 
-  /* フッタの高さと等しいネガティブマージン */
-  /* また最後の子要素の潜在的なマージンとしても機能 */
   margin-bottom: -50px;
 }
 .footer,
